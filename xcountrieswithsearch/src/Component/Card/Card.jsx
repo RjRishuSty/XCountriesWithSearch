@@ -7,13 +7,13 @@ export const Card = () => {
   const { filteredCardData, isLoading } = useContext(DataContext);
   console.log("inCard", filteredCardData);
   return (
-    <>
+    <div className={Styles.countryCard}>
       {console.log(filteredCardData, "inCard")}
       {!isLoading ? (
         filteredCardData.length > 0 ? (
           filteredCardData.map((item, index) => {
             return (
-              <div className={Styles.countryCard} key={index}>
+              <div className={Styles.card} key={index}>
                 <img
                   className={Styles.img}
                   src={item.flags.svg}
@@ -33,6 +33,6 @@ export const Card = () => {
           <CircularProgress color="primary" />
         </div>
       )}
-    </>
+    </div>
   );
 };

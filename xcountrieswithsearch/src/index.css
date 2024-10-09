@@ -5,9 +5,10 @@
 }
 .App {
   /* border: 2px solid red; */
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   flex-wrap: wrap;
 }
 button {
