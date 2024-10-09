@@ -1,0 +1,12 @@
+.search{
+    width: 50%;
+    height: 40px;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+} 
+@media (max-width:550px) {
+    .search{
+        width: 100%;
+    }
+}
