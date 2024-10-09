@@ -15,7 +15,7 @@ export const Card = () => {
             return (
               <div className={Styles.countryCard} key={index}>
                 <img
-                  className={Styles.img}
+                  className={Styles.imges}
                   src={item.flags.svg}
                   alt={item.name.common} 
                 />

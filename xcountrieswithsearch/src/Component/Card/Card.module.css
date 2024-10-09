@@ -12,7 +12,7 @@
   cursor: pointer;
   text-align: center;
 }
-.img {
+.imges {
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -21,7 +21,7 @@
   filter: brightness(100%);
   margin-bottom: 20px;
 }
-img:hover {
+.imges:hover {
   filter: brightness(80%);
 }
 
@@ -30,7 +30,7 @@ img:hover {
     width: 100%;
     height: auto;
   }
-  .img {
+  .imges {
     width: 100%;
     height: 150px;
     object-fit: contain;
