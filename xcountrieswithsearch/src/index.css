@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 .App {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
   flex-wrap: wrap;
 }
