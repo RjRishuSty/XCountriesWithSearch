@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import Styles from "./Search.module.css";
 import { DataContext } from "../../Page/Home";
 
-const SearchCom = () => {
+const Search = () => {
   const inputRef = useRef();
   const { cardData, setFilteredCardData } = useContext(DataContext);
   const [text, setText] = useState("");
@@ -42,4 +42,4 @@ const SearchCom = () => {
   );
 };
 
-export default SearchCom;
+export default Search;
