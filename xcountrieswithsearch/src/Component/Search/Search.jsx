@@ -24,7 +24,7 @@ const Search = () => {
       const filterData = cardData.filter((item) =>
         item.name.common.toLowerCase().includes(text.toLowerCase())
       );
-      setFilteredCardData(filterData);
+      return setFilteredCardData(filterData);
     },
     [cardData, setFilteredCardData]
   );
