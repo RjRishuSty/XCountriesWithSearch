@@ -9,18 +9,14 @@ export const DataContext = createContext();
 function App() {
   const [cardData, setCardData] = useState([]);
   const [filteredCardData, setFilteredCardData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const fetchApi = async () => {
     try {
-      setIsLoading(true);
       const response = await axios.get(`https://restcountries.com/v3.1/all`);
       setCardData(response.data);
       setFilteredCardData(response.data);
     } catch (error) {
       console.error(`Error fetching data:${error}`);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -32,7 +28,7 @@ function App() {
 
   return (
     <DataContext.Provider
-      value={{ cardData, isLoading, setFilteredCardData, filteredCardData }}
+      value={{ cardData, setFilteredCardData, filteredCardData }}
     >
       <Routes>
         <Route exact path="/" element={<Home />} />
