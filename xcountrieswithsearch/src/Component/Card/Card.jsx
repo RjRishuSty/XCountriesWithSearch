@@ -3,10 +3,10 @@ import Styles from "./Card.module.css";
 import { DataContext } from "../../Page/Home";
 
 export const Card = () => {
-  const { filteredCardData } = useContext(DataContext);
+  const { filteredCardData ,cardData,} = useContext(DataContext);
   return (
     <>
-      {filteredCardData.map((item, index) => {
+      {cardData.map((item, index) => {
         return (
           <div className={Styles.countryCard} key={index}>
             <img

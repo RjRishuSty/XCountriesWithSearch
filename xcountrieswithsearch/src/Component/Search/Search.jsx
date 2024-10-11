@@ -4,7 +4,7 @@ import { DataContext } from "../../Page/Home";
 
 const Search = () => {
   const inputRef = useRef();
-  const { cardData, setFilteredCardData } = useContext(DataContext);
+  const { cardData,setCardData, setFilteredCardData } = useContext(DataContext);
   const [text, setText] = useState("");
 
   const inputRefHandler = () => {
@@ -17,19 +17,19 @@ const Search = () => {
     const filterData = cardData.filter((item) =>
       item.name.common.toLowerCase().includes(text.toLowerCase())
     );
-    setFilteredCardData(filterData);
-  },[cardData,setFilteredCardData])
+    setCardData(filterData);
+  },[cardData,setCardData])
  
   useEffect(() => {
     if (text === "") {
-        setFilteredCardData(cardData);
+        setCardData(cardData);
     } else {
       const timeId = setTimeout(() => {
         filterSearchData(text);
       }, 500);
       return () => clearTimeout(timeId);
     }
-  }, [text,filterSearchData,cardData,setFilteredCardData]);
+  }, [text,setCardData,cardData,setFilteredCardData]);
 
   return (
     <input
