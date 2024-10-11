@@ -15,6 +15,7 @@ const NotFound = () => {
       <img
         src={require("../assets/NotFound.png")}
         style={{ width: "100%", objectFit: "cover" }}
+        alt="notfound"
       />
 
       <Link to="/">
