@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <div className="App">
-      <DataContext.Provider value={{ cardData, isLoading, setCardData,filteredCardData }}>
+      <DataContext.Provider value={{ cardData, isLoading, setFilteredCardData,filteredCardData }}>
         <Navbar />
         <Card />
       </DataContext.Provider>
@@ -40,4 +40,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
