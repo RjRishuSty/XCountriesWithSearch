@@ -1,13 +1,12 @@
-
-import React from 'react'
-import Styles from './Navbar.module.css';
-import Search from '../Search/Search';
+import React from "react";
+import Styles from "./Navbar.module.css";
+import Search from "../Search/Search";
 const Navbar = () => {
   return (
     <div className={Styles.nav}>
-        <Search/>
+      <Search />
     </div>
-  )
-} 
+  );
+};
 
-export default Navbar
+export default Navbar;

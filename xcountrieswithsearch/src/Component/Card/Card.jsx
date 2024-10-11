@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Styles from "./Card.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
-import { DataContext } from "../../Page/Home";
+import { DataContext } from "../../App";
 
 export const Card = () => {
   const { filteredCardData, isLoading } = useContext(DataContext);
@@ -17,7 +17,7 @@ export const Card = () => {
                 <img
                   className={Styles.img}
                   src={item.flags.svg}
-                  alt={item.name.common} 
+                  alt={item.name.common}
                 />
                 <h2>{item.name.common}</h2>
               </div>

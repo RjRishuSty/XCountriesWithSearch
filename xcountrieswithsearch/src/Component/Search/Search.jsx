@@ -1,6 +1,12 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Styles from "./Search.module.css";
-import { DataContext } from "../../Page/Home";
+import { DataContext } from "../../App";
 
 const Search = () => {
   const inputRef = useRef();
@@ -13,23 +19,26 @@ const Search = () => {
     }
   };
 
-  const filterSearchData = useCallback((text) => {
-    const filterData = cardData.filter((item) =>
-      item.name.common.toLowerCase().includes(text.toLowerCase())
-    );
-    setFilteredCardData(filterData);
-  },[cardData, setFilteredCardData]);
+  const filterSearchData = useCallback(
+    (text) => {
+      const filterData = cardData.filter((item) =>
+        item.name.common.toLowerCase().includes(text.toLowerCase())
+      );
+      setFilteredCardData(filterData);
+    },
+    [cardData, setFilteredCardData]
+  );
 
   useEffect(() => {
     if (text === "") {
-        setFilteredCardData(cardData);
+      setFilteredCardData(cardData);
     } else {
       const timeId = setTimeout(() => {
         filterSearchData(text);
       }, 500);
       return () => clearTimeout(timeId);
     }
-  }, [text,cardData,filterSearchData,setFilteredCardData]);
+  }, [text, cardData, filterSearchData, setFilteredCardData]);
 
   return (
     <input
