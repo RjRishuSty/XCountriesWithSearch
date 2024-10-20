@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,31 +13,39 @@ const App = () => {
     try {
       const response = await axios.get(`https://restcountries.com/v3.1/all`);
       setCountries(response.data);
-      setFilterCountries(response.data);
+      setFilterCountries(response.data); 
     } catch (error) {
-      console.error("Failed to fetch the data ", error);
+      console.error("Failed to fetch the data", error);
     }
   };
-
-  const searchHandle = (e) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  };
-
-  useEffect(() => {
-    const filtered = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchTerm)
-    );
-    setFilterCountries(filtered);
-  }, [searchTerm, countries]);
 
   useEffect(() => {
     fetchCountries();
   }, []);
 
+  useEffect(() => {
+    const filtered = countries.filter((country) =>
+      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilterCountries(filtered);
+  }, [searchTerm, countries]);
+
+  const searchHandle = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home countries={filterCountries} searchHandle={searchHandle} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              countries={filterCountries}
+              searchHandle={searchHandle}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

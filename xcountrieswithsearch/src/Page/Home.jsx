@@ -2,7 +2,6 @@
 import React from "react";
 
 const Home = ({ countries, searchHandle }) => {
-    if(!countries)return null;
   return (
     <div className="Home">
       <nav className="navbar">

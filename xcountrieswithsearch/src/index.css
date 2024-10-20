@@ -1,44 +1,39 @@
-* {
+
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* background-color: #f4f4f4; */
 }
-.App {
-  border: 2px solid red;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-wrap: wrap;
-}
-.navbar{
-  width: 100%;
-  height: auto;
-  padding: 30px 10px;
-  background-color: #f4f4f4;
-  margin-bottom: 50px;
+
+.navbar {
+  padding: 10px;
+  background: #f3f2f2;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
-input{
+
+.navbar input {
   width: 50%;
-  height: 50px;
-  padding: 0px 10px;
-  font-weight: 600;
-  font-size: 1.2rem;
+  height: 40px;
+  padding: 5px;
+  font-size: 16px;
 }
+
 .countryGrid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
-  justify-content: center;
+  padding: 10px;
 }
 
 .countryCard {
-  width: 200px;
-  height: auto;
-  border: 1px solid #ccc;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   padding: 10px;
   text-align: center;
 }
@@ -46,4 +41,9 @@ input{
 .countryCard img {
   width: 100%;
   height: 150px;
+}
+
+.countryCard h3 {
+  font-size: 1.2em;
+  margin: 0;
 }
