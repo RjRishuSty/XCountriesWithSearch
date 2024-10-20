@@ -33,15 +33,13 @@ const App = () => {
       />
      </nav>
       <div className="countryGrid">
-        {filteredCountries.length > 0 ? (
+        {filteredCountries.length > 0 && (
           filteredCountries.map((country) => (
             <div className="countryCard" key={country.cca3}>
               <img src={country.flags.png} alt={country.name.common} />
               <h3>{country.name.common}</h3>
             </div>
           ))
-        ) : (
-          <p>No countries found.</p>
         )}
       </div>
     </div>
